@@ -32,10 +32,10 @@ yarn add proxable
 import { Proxable } from 'proxable';
 
 type UIstore = {
-	user? : {
-		name      : string;
-		metadata? : Record<string, any>;
-	};
+  user? : {
+    name      : string;
+    metadata? : Record<string, any>;
+  };
 };
 
 const observable = Proxable.create<UIstore>();
@@ -44,7 +44,7 @@ observable.user = { name: 'alice', metadata: {} };
 
 // subscribe to a specific path
 const off = observer.subscribe ( 'user.name', ( val, path) => {
-	console.log ( `user.name changed to`, val );
+  console.log ( `user.name changed to`, val );
 });
 
 // mutate directly
